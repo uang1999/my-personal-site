@@ -235,5 +235,134 @@ hr.bar {
   width: 850px
 }
 
+/* 調整父層容器 */
+
+#my-pic {
+  float: left;
+  margin-right: 20px
+}
+
+#my-pic img {
+  width: 200px
+}
+
+/* 
+  原始 css code
+*/
+
+
+/* @media 1024:設定寬度在1024上看不到按鈕 */
+
+@media screen and (max-width: 1024px) {   
+  .menu-button, 
+  .menu-button-checkbook {
+    display: none;
+  }
+}
+
+/*
+新增漢堡按鈕，電腦版需隱藏
+*/
+
+/* 修改container適應螢幕大小 */
+
+@media screen and (max-width: 1023px) {
+  .container {
+    width: auto;
+  }
+
+  /* 美化按鈕設定 */
+
+  .menu-button {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    color: gray;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+  
+  /* 固定按鈕在上方，設定按鈕大小 */
+
+  .menu-button-checkbox {
+    position: fixed; 
+    top: 0;  
+    right: 0;
+    width: 55px;
+    height: 40px;
+    opacity: 0; /* checkbox透明 */
+  }
+
+  /* 按鈕之後才出現 */
+
+  .menu-button-checkbox:checked ~ .menu {
+    display: block;
+} 
+
+
+  /* 螢幕縮小時，導覽列移到右排 */
+
+  .menu {
+    display: none;  /* 按鈕之後才出現 */
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 150px;
+    height: 100%;
+    background: gray;
+  }
+
+  .menu li {
+    border: 0;
+    border-radius: 0;
+  }
+
+  /* 調整父層容器 */
+
+  #my-pic {
+    width: 100%;
+  }
+
+  #my-pic img {
+    display: block;
+    margin: 15px auto;
+  }
+
+  /* my-work 自動適應寬度，手機版最多不超過。 */       
+
+  .item {
+    max-width: 100%;
+  }
+
+  /* 調整contact-me 排版，寬度設定 */
+
+  form.contact-form {
+    width: 80%
+  }
+
+  /*
+    手機版的 css 都寫在這邊
+  */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
